@@ -97,40 +97,6 @@ cd m3-09-lab-feature-relationship-diagnostics
    - Does the regression line capture the actual pattern well?
    - Do subgroups show different slopes or intercepts?
 
-### Task 4: Investigate Outlier Effects on Correlation
-
-1. Choose one feature pair that has a moderately strong Pearson correlation (|r| between 0.4 and 0.7).
-2. Compute and record the Pearson *r* for the full data.
-3. Identify potential outliers using either:
-   - A z-score threshold (e.g., |z| > 3), or
-   - The IQR method (values beyond 1.5 × IQR from Q1/Q3).
-4. Remove the identified outliers and recompute Pearson *r*.
-5. Alternatively, add 2–3 synthetic extreme points and recompute *r*.
-6. Create a before-and-after scatterplot (side by side) showing how the regression line shifts.
-7. In a markdown cell, summarize:
-   - How much did *r* change?
-   - What does this tell you about the robustness of Pearson correlation to outliers?
-   - When might Spearman be a safer choice?
-
-### Task 5: Demonstrate Simpson's Paradox
-
-1. Compute the overall Pearson correlation for a feature pair across the entire dataset (e.g., `bill_length_mm` vs `bill_depth_mm` in the Penguins dataset).
-2. Now compute the same Pearson correlation **within each subgroup** (e.g., within each species).
-3. Create a scatterplot that overlays all subgroups with different colors and their individual regression lines, plus the overall regression line in a contrasting style (e.g., dashed black).
-4. In a markdown cell, answer:
-   - Does the direction of the correlation change when you condition on the grouping variable?
-   - Why does the aggregate trend differ from the subgroup trends?
-   - How could ignoring Simpson's paradox lead to incorrect conclusions in a real project?
-
-### Task 6: Feature Relationship Report
-
-1. Create a summary markdown cell (or multiple cells) at the end of your notebook titled **Feature Relationship Report**.
-2. The report should include:
-   - A table listing each feature pair, its Pearson *r*, Spearman *ρ*, whether the relationship is linear/monotonic/neither, and any caveats (outlier sensitivity, Simpson's paradox).
-   - A brief paragraph ranking the top 3 most reliable feature associations and explaining why you trust them.
-   - One paragraph discussing which correlations are misleading and what a downstream model builder should watch out for.
-3. Keep the report concise — aim for about 300–500 words plus the table.
-
 ## Submission
 
 ### What to Submit
@@ -142,9 +108,6 @@ cd m3-09-lab-feature-relationship-diagnostics
 - [ ] Pearson and Spearman correlation matrices are computed and compared
 - [ ] At least two annotated heatmaps are produced (Pearson and Spearman)
 - [ ] Scatterplots with regression lines and subgroup coloring are included
-- [ ] Outlier sensitivity analysis shows before-and-after correlation values
-- [ ] Simpson's paradox is demonstrated with aggregate vs. subgroup correlations
-- [ ] A feature relationship report summarizes findings with a comparison table
 - [ ] All markdown cells contain clear, concise interpretations
 
 ### How to Submit
